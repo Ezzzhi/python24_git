@@ -26,8 +26,11 @@ def mul():
 
 def div():
     num1, num2 = get_values()
-    res = num1 / num2
-    insert_values(res)
+    if num2 == 0:
+        insert_values('Error!')
+    else:
+        res = num1 / num2
+        insert_values(res)
 
 
 window = tk.Tk()
