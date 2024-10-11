@@ -1,21 +1,21 @@
 # Задание "Раз, два, три, четыре, пять .... Это не всё?"
 
 def calculate_structure_sum(data):
-    sum = 0
+    sum_ = 0
     for i in data:
         if isinstance(i, dict):
            i = [element for pair in i.items() for element in pair]
         if isinstance(i, str):
-            sum = sum + len(i)
+            sum_ = sum_ + len(i)
         elif isinstance(i, int):
-            sum = sum + i
+            sum_ = sum_ + i
         elif isinstance(i, list) or isinstance(i, tuple) or isinstance(i, set):
-            sum = sum + calculate_structure_sum(i)
+            sum_ = sum_ + calculate_structure_sum(i)
         else:
             print('wrong type of data:', i)
-            # pltcm можно бы поставить break и прервать вычисления, но я предпочел пропустить
+            # здесь можно бы поставить break и прервать вычисления, но я предпочел пропустить
             # такие данные (например, float) и подсчитать все остальное
-    return sum
+    return sum_
 
 
 data_structure = [
