@@ -36,7 +36,7 @@ def div():
 window = tk.Tk()
 
 window.title('Калькулятор')
-window.geometry("300x300")
+window.geometry("300x280")
 window.resizable(False, False)
 batton_add = tk.Button(window, text="+", command=add)
 batton_add.place(x=50, y=150, width=50)
