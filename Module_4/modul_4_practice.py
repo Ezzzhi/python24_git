@@ -1,3 +1,4 @@
+# from math import pi
 import math
 
 # print(globals())
@@ -11,6 +12,15 @@ import math
 # for key, value in globals_dict.items():
 #     print(key, value)
 
+def insertion_sort(ls):
+    for i in range(1, len(ls)):
+        key = ls[i]
+        j = i - 1
+        while ls[j] > key and j >= 0:
+            ls[j + 1] = ls[j]
+            j -= 1
+        ls[j + 1] = key
+        return ls
 
 
 # for path in sys.path:
@@ -34,3 +44,24 @@ import math
 #
 # print(square(4))
 
+
+print(math.pi)
+
+class House:
+    def __init__(self, name, number_of_floors):
+        self.name = name
+        self.number_of_floors = number_of_floors
+
+    def __str__(self):
+        return f'Название: {self.name}, кол-во этажей: {self.number_of_floors}'
+
+h1 = House('ЖК Эльбрус', 10)
+h2 = House('ЖК Акация', 20.2)
+
+print(h1)
+print(h2)
+
+if isinstance(h2.number_of_floors, int):
+    print(h1.number_of_floors == h2.number_of_floors)
+else:
+    print('Error')
