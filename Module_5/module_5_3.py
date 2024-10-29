@@ -1,6 +1,7 @@
 # Задача "Магические здания"
 
 class House:
+    roof = True
     def __init__(self, name, number_of_floors):
         self.name = name
         self.number_of_floors = number_of_floors
@@ -91,3 +92,5 @@ print(h1 >= h2) # __ge__
 print(h1 < h2) # __lt__
 print(h1 <= h2) # __le__
 print(h1 != h2) # __ne__
+
+print(House)

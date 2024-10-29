@@ -4,5 +4,5 @@ def test_fuction():
     inner_function()
 
 test_fuction()
-# inner_function() запуск этой функции все test_function() выдаст ошибку, т.к. она находится
+# inner_function() запуск этой функции вне test_function() выдаст ошибку, т.к. она находится
 # в локальной области видимости этой функции и из глобальной недоступна

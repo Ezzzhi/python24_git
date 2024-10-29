@@ -47,21 +47,5 @@ def insertion_sort(ls):
 
 print(math.pi)
 
-class House:
-    def __init__(self, name, number_of_floors):
-        self.name = name
-        self.number_of_floors = number_of_floors
 
-    def __str__(self):
-        return f'Название: {self.name}, кол-во этажей: {self.number_of_floors}'
-
-h1 = House('ЖК Эльбрус', 10)
-h2 = House('ЖК Акация', 20.2)
-
-print(h1)
-print(h2)
-
-if isinstance(h2.number_of_floors, int):
-    print(h1.number_of_floors == h2.number_of_floors)
-else:
-    print('Error')
+print(object)
