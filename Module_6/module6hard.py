@@ -27,22 +27,20 @@ class Figure:
     @staticmethod
     def __is_valid_color(r, g, b):
         for i in (r, g, b):
-            if not isinstance(i, int) or (0 >= i) or (i >= 255):
-                return False
-        return True
+            if isinstance(i, int) and 0 <= i <= 255:
+                return True
+            return False
 
     def set_color(self, r, g, b):
         if Figure.__is_valid_color(r, g, b):
             self.__color = [r, g, b]
 
     def __is_valid_sides(self, *sides):
-        if len(sides) != len(self.__sides):
-            return False
-        else:
+        if len(sides) == len(self.__sides):
             for side in list(sides):
-                if not isinstance(side, int) or side <= 0:
-                    return False
-            return True
+                if isinstance(side, int) and side > 0:
+                    return True
+                return False
 
     def get_sides(self):
         return self.__sides
