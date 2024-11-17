@@ -59,9 +59,6 @@ class PoisonousAnimal(Animal):
 class Duckbill (Bird, PoisonousAnimal, AquaticAnimal):
 
     sound = "Click-click-click"
-    
-    def __init__(self, speed):
-        super().__init__(speed)
 
 
 db = Duckbill(10)
