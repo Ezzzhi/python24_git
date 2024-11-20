@@ -38,7 +38,7 @@ for name, words in get_all_words().items():
 class WordsFinder:
 
     def __init__(self, *files):
-        self.file_names = files
+        self.file_names = list(files)
 
     def get_all_words(self):
         """
