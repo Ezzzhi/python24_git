@@ -49,14 +49,11 @@ class WordsFinder:
         """
         all_words = {}
         for file_name in self.file_names:
-            with open(file_name, encoding='utf-8') as file:
-                all_words[file_name] = []
-                for line in file:
-                    line = line.lower()
-                    for sign in [',', '.', '=', '!', '?', ';', ':', ' - ', '(', ')', '«', '»', '*', '#', '@']:
-                        line = line.replace(sign, '')
-                    for word in line.split():
-                        all_words[file_name].append(word)
+            with open(file_name, 'r', encoding='utf-8') as file:
+                info = file.read().lower()
+                for sign in [',', '.', '=', '!', '?', ';', ':', ' - ', '(', ')', '«', '»', '*', '#', '@']:
+                    info = info.replace(sign, '')
+                all_words[file_name] = info.split()
         return all_words
 
     def find(self, word):
