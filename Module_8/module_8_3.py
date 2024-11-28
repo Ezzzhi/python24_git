@@ -64,6 +64,7 @@ class IncorrectCarNumbers(Exception):
     def __init__(self, message):
         self.message = message
 
+# валидные данные
 try:
     first = Car('Model1', 1000000, 'f123dj')
 except IncorrectVinNumber as exc:
@@ -73,6 +74,7 @@ except IncorrectCarNumbers as exc:
 else:
     print(f'{first.model} успешно создан')
 
+# невалидный vin
 try:
   second = Car('Model2', 300, 'т001тр')
 except IncorrectVinNumber as exc:
@@ -82,6 +84,7 @@ except IncorrectCarNumbers as exc:
 else:
   print(f'{second.model} успешно создан')
 
+# невалидные номера
 try:
   third = Car('Model3', 2020202, 'нет номера')
 except IncorrectVinNumber as exc:
