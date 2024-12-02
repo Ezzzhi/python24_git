@@ -57,20 +57,22 @@ class Car:
         return True
 
 class IncorrectVinNumber(Exception):
-    def __init__(self, message):
-        self.message = message
+    # def __init__(self, message):
+    #     self.message = message
+    pass
 
 class IncorrectCarNumbers(Exception):
-    def __init__(self, message):
-        self.message = message
+    # def __init__(self, message):
+    #     self.message = message
+    pass
 
 # валидные данные
 try:
     first = Car('Model1', 1000000, 'f123dj')
 except IncorrectVinNumber as exc:
-    print(exc.message)
+    print(exc)
 except IncorrectCarNumbers as exc:
-    print(exc.message)
+    print(exc)
 else:
     print(f'{first.model} успешно создан')
 
@@ -78,9 +80,9 @@ else:
 try:
   second = Car('Model2', 300, 'т001тр')
 except IncorrectVinNumber as exc:
-  print(exc.message)
+  print(exc)
 except IncorrectCarNumbers as exc:
-  print(exc.message)
+  print(exc)
 else:
   print(f'{second.model} успешно создан')
 
@@ -88,8 +90,8 @@ else:
 try:
   third = Car('Model3', 2020202, 'нет номера')
 except IncorrectVinNumber as exc:
-  print(exc.message)
+  print(exc)
 except IncorrectCarNumbers as exc:
-  print(exc.message)
+  print(exc)
 else:
   print(f'{third.model} успешно создан')
