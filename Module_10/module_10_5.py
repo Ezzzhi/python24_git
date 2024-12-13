@@ -18,7 +18,7 @@
 Измерьте время выполнения и выведите его в консоль.
 """
 
-from multiprocessing import Pool
+from multiprocessing import Pool, Lock
 from datetime import datetime
 
 def read_info(name):
@@ -33,19 +33,18 @@ def read_info(name):
 if __name__ == '__main__':
 
     filenames = [f'./file {number}.txt' for number in range(1, 5)]
+    lock = Lock()
 
     # Линейный вызов
-    startTime = datetime.now()
-    for filename in filenames:
-        read_info(filename)
-    print (f'Время выполнения функций: {datetime.now() - startTime}')
-    print()
+    with lock: # чтобы линейный и мультипроцессный варианты работали последовательно, а не параллельно
+        startTime = datetime.now()
+        for filename in filenames:
+            read_info(filename)
+        print (f'{datetime.now() - startTime} (линейный)')
 
     # Многопроцессный
 
     startTime = datetime.now()
-
     with Pool(processes=4) as pool:
         pool.map(read_info, filenames)
-
-    print(f'Время выполнения процессов: {datetime.now() - startTime}')
+    print(f'{datetime.now() - startTime} (многопроцессный)')
