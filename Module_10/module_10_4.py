@@ -87,17 +87,17 @@ class Cafe:
 
 
 # Создание столов
-tables = [Table(number) for number in range(1, 6)]
+my_tables = [Table(number) for number in range(1, 6)]
 # Имена гостей
 guests_names = [
 'Maria', 'Oleg', 'Vakhtang', 'Sergey', 'Darya', 'Arman',
 'Vitoria', 'Nikita', 'Galina', 'Pavel', 'Ilya', 'Alexandra'
 ]
 # Создание гостей
-guests = [Guest(name) for name in guests_names]
+my_guests = [Guest(name) for name in guests_names]
 # Заполнение кафе столами
-cafe = Cafe(*tables)
+cafe = Cafe(*my_tables)
 # Приём гостей
-cafe.guest_arrival(*guests)
+cafe.guest_arrival(*my_guests)
 # Обслуживание гостей
 cafe.serve_guests()
